@@ -11,27 +11,11 @@ Audio transcription CLI tool using faster-whisper with a progress bar.
 
 ## Installation
 
-### Option 1: Install with pip (editable)
+### Install with pip (editable)
 
 ```bash
 cd soundscribe
 pip install -e .
-```
-
-### Option 2: Install with uv
-
-```bash
-cd soundscribe
-uv pip install -e .
-```
-
-### Option 3: Build and install
-
-```bash
-cd soundscribe
-pip install build
-python -m build
-pip install dist/soundscribe-0.1.0-py3-none-any.whl
 ```
 
 ## Usage
