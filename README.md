@@ -2,6 +2,11 @@
 
 Audio transcription CLI tool using faster-whisper with a progress bar.
 
+I got tired of running `faster-whisper` and staring at a blank terminal with no idea whether it
+was working, stuck, or halfway done. Long audio files could take minutes with zero feedback.
+So I wrapped it in a proper CLI with a live progress bar and time estimates — because knowing
+how long something will take is basic UX, even for a local dev tool.
+
 ## Features
 
 - Fast transcription using faster-whisper
@@ -53,3 +58,5 @@ All dependencies are automatically installed during installation.
 ```bash
 pip uninstall soundscribe
 ```
+
+<br>
