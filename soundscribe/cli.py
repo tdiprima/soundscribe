@@ -1,10 +1,18 @@
 import argparse
+import logging
+import os
 from pathlib import Path
 
 from faster_whisper import WhisperModel
 from rich.progress import (BarColumn, Progress, TimeElapsedColumn,
                            TimeRemainingColumn)
 from rich_argparse import RichHelpFormatter
+
+logging.basicConfig(
+    level=os.getenv("LOG_LEVEL", "INFO").upper(),
+    format="%(asctime)s %(levelname)s %(message)s",
+)
+logger = logging.getLogger(__name__)
 
 
 def main():
@@ -19,7 +27,10 @@ def main():
     if not audio_path.exists():
         raise FileNotFoundError(f"Bruh... can't find: {audio_path}")
 
-    model = WhisperModel("medium", device="cpu", compute_type="int8")
+    model_size = os.getenv("WHISPER_MODEL", "medium")
+    device = os.getenv("WHISPER_DEVICE", "cpu")
+    compute_type = os.getenv("WHISPER_COMPUTE_TYPE", "int8")
+    model = WhisperModel(model_size, device=device, compute_type=compute_type)
 
     # First pass: get metadata including duration
     # (fast, doesn't decode audio fully)
@@ -56,7 +67,7 @@ def main():
     out_path = audio_path.with_suffix(".txt")
     out_path.write_text(full_transcript)
 
-    print(f"✨ Transcript saved to: {out_path}")
+    logger.info("Transcript saved to: %s", out_path)
 
 
 if __name__ == "__main__":
