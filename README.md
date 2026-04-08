@@ -32,6 +32,7 @@ soundscribe audio_file.m4a
 ```
 
 This will:
+
 1. Transcribe the audio file
 2. Show a progress bar during transcription
 3. Save the transcript as `audio_file.txt` in the same directory
