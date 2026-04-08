@@ -7,12 +7,32 @@ was working, stuck, or halfway done. Long audio files could take minutes with ze
 So I wrapped it in a proper CLI with a live progress bar and time estimates — because knowing
 how long something will take is basic UX, even for a local dev tool.
 
+Plus, I wanted something that does **not** reach out to the cloud to do the transcription.
+
 ## Features
 
 - Fast transcription using faster-whisper
 - Progress bar with time estimates
 - Supports various audio formats (.m4a, .mp3, .wav, etc.)
 - Automatic output to .txt file
+
+## Supported Audio Formats
+
+`soundscribe` relies on `faster-whisper`, which uses ffmpeg for audio decoding. Any format ffmpeg supports will work. Common formats include:
+
+| Format | Extension |
+|--------|-----------|
+| MPEG Audio Layer 3 | `.mp3` |
+| MPEG-4 Audio | `.m4a` |
+| Waveform Audio | `.wav` |
+| FLAC | `.flac` |
+| Ogg Vorbis | `.ogg` |
+| Opus | `.opus` |
+| WebM | `.webm` |
+| MP4 video (audio extracted) | `.mp4` |
+| AAC | `.aac` |
+
+> **Note:** ffmpeg must be installed and available on your `PATH` for formats other than WAV.
 
 ## Installation
 
@@ -43,21 +63,6 @@ This will:
 $ soundscribe my_recording.m4a
 ✨ Transcribing... ████████████████████ 100% 0:00:45 0:00:00
 ✨ Transcript saved to: my_recording.txt
-```
-
-## Requirements
-
-- Python >= 3.8
-- faster-whisper
-- rich
-- rich-argparse
-
-All dependencies are automatically installed during installation.
-
-## Uninstall
-
-```bash
-pip uninstall soundscribe
 ```
 
 <br>
