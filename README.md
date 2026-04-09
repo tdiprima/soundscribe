@@ -81,4 +81,8 @@ $ soundscribe my_recording.m4a
 ✨ Transcript saved to: my_recording.txt
 ```
 
+## License
+
+MIT — see [LICENSE](LICENSE) for details.
+
 <br>
