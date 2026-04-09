@@ -1,5 +1,7 @@
 # SoundScribe
 
+[![PyPI version](https://badge.fury.io/py/soundscribe.svg)](https://badge.fury.io/py/soundscribe)
+
 Audio transcription CLI tool using faster-whisper with a progress bar.
 
 I got tired of running `faster-whisper` and staring at a blank terminal with no idea whether it
