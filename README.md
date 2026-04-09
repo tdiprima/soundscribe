@@ -43,6 +43,22 @@ cd soundscribe
 pip install -e .
 ```
 
+## First Run
+
+On first run, `faster-whisper` will download the model from Hugging Face and cache it locally. You'll see download progress and a warning like:
+
+```
+Warning: You are sending unauthenticated requests to the HF Hub...
+```
+
+This is normal. The model is only downloaded once — subsequent runs load it from the local cache (`~/.cache/huggingface/`) with no network activity. **Your audio is never sent anywhere.**
+
+To suppress the warning and get faster downloads, set a (free) [Hugging Face token](https://huggingface.co/settings/tokens):
+
+```bash
+export HF_TOKEN=hf_your_token_here
+```
+
 ## Usage
 
 Once installed, you can use the `soundscribe` command from anywhere:
