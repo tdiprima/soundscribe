@@ -77,6 +77,8 @@ This will:
 
 ## Example
 
+100% done, 0:00:45 elapsed, 0:00:00 estimated remain.
+
 ```bash
 $ soundscribe my_recording.m4a
 ✨ Transcribing... ████████████████████ 100% 0:00:45 0:00:00
