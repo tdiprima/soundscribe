@@ -49,6 +49,7 @@ def main():
         TimeElapsedColumn(),
         TimeRemainingColumn(),
         transient=True,
+        speed_estimate_period=5,
     ) as progress:
 
         task_id = progress.add_task("✨ Transcribing...", total=total_duration)
